@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Courses Home
+    </title>
+    {# Load the tag library #} {% load bootstrap5 %} {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'courses/style.css' %}">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-dark bg-dark" style="margin-bottom: 5px;">
+            <h3 style="color: white; padding: 5px;">Course Project</h3>
+        </nav>
+    </div>
+    <div id="courses" class="container row">
+        <div id="course">
+            <h4>
+                Course Name
+            </h4>
+        </div>
+    </div>
+</body>
+
+</html>
