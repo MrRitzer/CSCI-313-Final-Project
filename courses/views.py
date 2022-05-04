@@ -1,11 +1,17 @@
 from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
 from .models import Course
 
 def courses_view(request):
-    template = loader.get_template('courses/index.html')
-    return HttpResponse(template.render())
+    course_list = Course.objects.order_by('id')
+    context = {
+        'course_list': course_list,
+    }
+    return render(request, 'courses/index.html',context)
 
 def courses_detail(request, pk):
-    course = Course.objects.get(pk)
-    return HttpResponse("You're at courses detail!")
+    course = Course.objects.get(pk = pk)
+    context = {
+        'course': course,
+    }
+    return render(request, 'courses/course_detail.html',context)

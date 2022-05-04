@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Course Detail
+    </title>
+    {# Load the tag library #} {% load bootstrap5 %} {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'courses/course_detail.css' %}">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-dark bg-dark" style="margin-bottom: 5px;">
+            <h3 style="color: white; padding: 5px;">
+                <a class="navbar-brand" href="/">
+                    Course Detail Home
+                </a>
+            </h3>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm" id="courses">
+                {% if course %}
+                <ul>
+                    <div id="course">
+                        <nav class="navbar navbar-light bg-light" style="padding: 5px; border-bottom: 1px rgb(90, 90, 90) solid;">
+                            <h5>
+                                <strong>
+                                    {{course.course_title}}
+                                </strong>
+                            </h5>
+                        </nav>
+                        <p style="margin: 5px;">
+                            <strong>
+                                Description: 
+                            </strong> {{course.course_description}}
+                        </p>
+                        <p style="margin: 5px;">
+                            <strong>
+                                Credits: 
+                            </strong> {{course.credits}}
+                        </p>
+                        <p style="margin: 5px;">
+                            <strong>
+                                Instructor: 
+                            </strong> {{course.instructor}}
+                        </p>
+                        <p style="margin: 5px;">
+                            <strong>
+                                Start: 
+                            </strong> {{course.start_date}}
+                        </p>
+                    </div>
+                </ul>
+                {% else %}
+                <p>Selected course does not exist!</p>
+                {% endif %}
+            </div>
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
